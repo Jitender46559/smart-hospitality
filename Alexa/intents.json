@@ -1,0 +1,163 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "smart hospitality",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "wait",
+                        "please again",
+                        "ohhh sorry",
+                        "ask me again",
+                        "again",
+                        "oh sorry",
+                        "mistake"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "how to fix an appointment",
+                        "how to make an appointment",
+                        "help",
+                        "help me"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "thank you",
+                        "see you soon",
+                        "see you",
+                        "bye bye",
+                        "bye",
+                        "stop"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "smarthospitality",
+                    "slots": [
+                        {
+                            "name": "patient",
+                            "type": "AMAZON.FirstName",
+                            "samples": [
+                                "this is {patient}",
+                                "{patient}",
+                                "my name is {patient}"
+                            ]
+                        },
+                        {
+                            "name": "doctor",
+                            "type": "AMAZON.FirstName",
+                            "samples": [
+                                "doctor {doctor}",
+                                "{doctor}"
+                            ]
+                        },
+                        {
+                            "name": "problem",
+                            "type": "AMAZON.FirstName"
+                        }
+                    ],
+                    "samples": [
+                        "my name is {patient} please fix my appointment with doctor {doctor} i am suffering from {problem}",
+                        "my name is {patient} fix my appointment with {doctor} as i am suffering from {problem}",
+                        "my name is {patient} please fix my appointment with {doctor} i am suffering from {problem}",
+                        "my name is {patient} please fix my appointment with doctor {doctor} as i am suffering from {problem}",
+                        "my name is {patient} please fix my appointment with {doctor} as i am suffering from {problem}",
+                        "hi this is {patient} please fix my appointment with {doctor} as i am suffering from {problem}",
+                        "hi this is {patient} please fix my appointment with {doctor} {problem}",
+                        "hi this is {patient} can you fix my appointment with doctor {doctor} {problem}",
+                        "this is {patient} here please set my appointment with doctor {doctor} i am suffering from {problem}",
+                        "this is {patient} here set my appointment with doctor {doctor} as i am suffering from {problem}",
+                        "my name is {patient}  i am suffering from {problem} please fix my appointment with {doctor}",
+                        "my name is {patient} i am suffering from {problem} please set my appointment with doctor {doctor}",
+                        "{patient} {doctor} {problem}",
+                        "my name is {patient} please set my meeting with doctor {doctor} as i am suffering from {problem} ",
+                        "my name is {patient} please set my appointment with doctor {doctor} as i am suffering from {problem} "
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "smarthospitality",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "patient",
+                            "type": "AMAZON.FirstName",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1407474920913.82642468804"
+                            }
+                        },
+                        {
+                            "name": "doctor",
+                            "type": "AMAZON.FirstName",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1407474920913.769042621434"
+                            }
+                        },
+                        {
+                            "name": "problem",
+                            "type": "AMAZON.FirstName",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1407474920913.82642468804",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me your name first"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1407474920913.232545948045",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Tell me about your health issue"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1407474920913.769042621434",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Tell me name of your doctor"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Give me name of your doctor"
+                    }
+                ]
+            }
+        ]
+    }
+}
